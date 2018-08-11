@@ -19,6 +19,10 @@ public:
         m_color (color)
     { }
 
+    explicit figure(std::istream& is) {
+        figure::deserialize(is);
+    }
+
     virtual ~figure() = default;
 
     line_width get_width() const noexcept {
@@ -38,7 +42,7 @@ public:
     }
 
     virtual void serialize(std::ostream& os) const {
-        os << m_width << " " << static_cast<int>(m_color) << std::endl;
+        os << m_width << " " << static_cast<int>(m_color);
     }
 
     virtual void deserialize(std::istream& is) {
@@ -70,6 +74,12 @@ public:
         m_end(end)
     { }
 
+    explicit line(std::istream& is)
+    :   figure(is)
+    {
+        is >> m_begin.x >> m_begin.y >> m_end.x >> m_end.y;
+    }
+
     ~line() override = default;
 
     point& begin() noexcept {
@@ -90,14 +100,15 @@ public:
 
     void serialize(std::ostream& os) const override {
         os << "line ";
-        os  << m_begin.x << " " << m_begin.y << " "
-            << m_end.x << " " << m_end.y << " ";
         figure::serialize(os);
+        os  << m_begin.x << " " << m_begin.y << " "
+            << m_end.x << " " << m_end.y
+            << std::endl;
     }
 
     void deserialize(std::istream& is) override {
-        is >> m_begin.x >> m_begin.y >> m_end.x >> m_end.y;
         figure::deserialize(is);
+        is >> m_begin.x >> m_begin.y >> m_end.x >> m_end.y;
     }
 
 private:
@@ -112,6 +123,13 @@ public:
         m_upper_left(ul),
         m_down_right(dr)
     { }
+
+    explicit rect(std::istream& is)
+    :   figure(is)
+    {
+        is  >> m_upper_left.x >> m_upper_left.y
+            >> m_down_right.x >> m_down_right.y;
+    }
 
     ~rect() override = default;
 
@@ -133,15 +151,16 @@ public:
 
     void serialize(std::ostream &os) const override {
         os << "rect ";
-        os  << m_upper_left.x << " " << m_upper_left.y << " "
-            << m_down_right.x << " " << m_down_right.y << " ";
         figure::serialize(os);
+        os  << m_upper_left.x << " " << m_upper_left.y << " "
+            << m_down_right.x << " " << m_down_right.y
+            << std::endl;
     }
 
     void deserialize(std::istream &is) override {
+        figure::deserialize(is);
         is  >> m_upper_left.x >> m_upper_left.y
             >> m_down_right.x >> m_down_right.y;
-        figure::deserialize(is);
     }
 
 private:
@@ -156,6 +175,12 @@ public:
         m_center(center),
         m_radius(radius)
     { }
+
+    explicit circle(std::istream& is)
+    :   figure(is)
+    {
+        is >> m_center.x >> m_center.y >> m_radius;
+    }
 
     ~circle() override = default;
 
@@ -177,13 +202,13 @@ public:
 
     void serialize(std::ostream &os) const override {
         os << "circle ";
-        os << m_center.x << " " << m_center.y << " " << m_radius << " ";
         figure::serialize(os);
+        os << m_center.x << " " << m_center.y << " " << m_radius << std::endl;
     }
 
     void deserialize(std::istream &is) override {
-        is >> m_center.x >> m_center.y >> m_radius;
         figure::deserialize(is);
+        is >> m_center.x >> m_center.y >> m_radius;
     }
 
 private:
