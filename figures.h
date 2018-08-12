@@ -12,6 +12,7 @@ enum class Color {
     Black
 };
 
+/// \brief базовый класс, описывающий абстрактнцю фигуру
 class figure {
 public:
     explicit figure(line_width width = 1, Color color = Color::Black) noexcept;
@@ -20,28 +21,27 @@ public:
 
     virtual ~figure() = default;
 
-    virtual void serialize(std::ostream& os) const {
-        os << m_width << " " << static_cast<int>(m_color);
-    }
+    /// \brief виртуальный метод для вывода фигуры в поток
+    virtual void serialize(std::ostream& os) const;
 
-    virtual void deserialize(std::istream& is) {
-        int color;
-        is >> m_width >> color;
-        m_color = static_cast<Color>(color);
-    }
+    /// \brief виртуальный метод для чтения фигуры из потока
+    virtual void deserialize(std::istream& is);
 
 private:
     line_width m_width;
     Color m_color;
 };
 
-struct point {
+/// \brief структура, описывающая точку на плоскости и хранящая ее коордиаты
+class point {
+public:
     explicit point(int _x = 0, int _y = 0) noexcept;
 
     int x;
     int y;
 };
 
+/// \brief класс, описывающий объект линии
 class line : public figure {
 public:
     line(point begin, point end, line_width width = 1, Color color = Color::Black) noexcept;
@@ -50,8 +50,10 @@ public:
 
     ~line() override = default;
 
+    /// \brief виртуальный метод для вывода линии в поток
     void serialize(std::ostream& os) const override;
 
+    /// \brief виртуальный метод для чтения линии из потока
     void deserialize(std::istream& is) override;
 
 private:
@@ -59,6 +61,7 @@ private:
     point m_end;
 };
 
+/// \brief класс, описывающий объект прямоугольника
 class rect : public figure {
 public:
     rect(point ul, point dr, line_width width = 1, Color color = Color::Black) noexcept;
@@ -67,8 +70,10 @@ public:
 
     ~rect() override = default;
 
+    /// \brief виртуальный метод для вывода прямоугольника в поток
     void serialize(std::ostream &os) const override;
 
+    /// \brief виртуальный метод для чтения прямоугольника из потока
     void deserialize(std::istream &is) override;
 
 private:
@@ -76,6 +81,7 @@ private:
     point m_down_right;
 };
 
+/// \brief класс, описывающий объект окружности
 class circle : public figure {
 public:
     circle(point center, size_t radius, line_width width = 1, Color color = Color::Black) noexcept;
@@ -84,8 +90,10 @@ public:
 
     ~circle() override = default;
 
+    /// \brief виртуальный метод для вывода окружности в поток
     void serialize(std::ostream &os) const override;
 
+    /// \brief виртуальный метод для чтения окружности из потока
     void deserialize(std::istream &is) override;
 
 private:
@@ -93,6 +101,8 @@ private:
     size_t m_radius;
 };
 
+/// \brief глобальная функция для вывода произвольной фигуры в поток
 std::ostream& operator<<(std::ostream& os, const figure& f);
 
+/// \brief глобальная функция для чтения произвольной фигуры из потока
 std::istream& operator>>(std::istream& is, figure& f);

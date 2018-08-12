@@ -9,6 +9,16 @@ figure::figure(std::istream &is) {
     figure::deserialize(is);
 }
 
+void figure::serialize(std::ostream &os) const {
+    os << m_width << " " << static_cast<int>(m_color);
+}
+
+void figure::deserialize(std::istream &is) {
+    int color;
+    is >> m_width >> color;
+    m_color = static_cast<Color>(color);
+}
+
 point::point(int _x, int _y) noexcept
         :   x(_x),
             y(_y)
