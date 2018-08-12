@@ -14,7 +14,7 @@ public:
 
     document() = default;
 
-    document(const std::string& filename);
+    explicit document(const std::string& filename);
 
     ~document() = default;
 

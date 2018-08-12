@@ -6,6 +6,8 @@ document::document(const std::string &filename) {
     for(std::string line; std::getline(ifs, line);) {
         read_figure(line);
     }
+
+    ifs.close();
 }
 
 void document::add_figure(figure *f) {

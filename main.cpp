@@ -1,9 +1,9 @@
 #include <iostream>
-#include "document.h"
+#include "controller.h"
 
 
 int main() {
-    document d;
+    editor_control ec;
 
     return 0;
 }
