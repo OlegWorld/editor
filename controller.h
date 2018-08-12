@@ -61,13 +61,13 @@ private:
 };
 
 /// \brief команда переключеения активного файла
-class switch_document_command : public file_command {
+class switch_document_command : public document_command {
 public:
     switch_document_command(document* doc);
 
     ~switch_document_command() override = default;
 
-    void operator()(document_control& dc);
+    void operator()(document_control& dc) override;
 
 private:
     document* m_document;
