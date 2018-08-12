@@ -1,0 +1,5 @@
+<map id="document_command" name="document_command">
+<area shape="rect" id="node2" href="$classadd__figure__command.html" title="команда добавления фигуры " alt="" coords="5,147,179,253"/>
+<area shape="rect" id="node3" href="$classremove__figure__command.html" title="команда удаления фигуры " alt="" coords="203,147,399,253"/>
+<area shape="rect" id="node4" href="$classswitch__document__command.html" title="команда переключеения активного файла " alt="" coords="424,147,640,253"/>
+</map>

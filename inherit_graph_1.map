@@ -1,0 +1,6 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="node1" href="$classdocument__command.html" title="абстрактный класс команд управления документом " alt="" coords="6,56,149,83"/>
+<area shape="rect" id="node2" href="$classadd__figure__command.html" title="команда добавления фигуры " alt="" coords="219,5,365,32"/>
+<area shape="rect" id="node3" href="$classremove__figure__command.html" title="команда удаления фигуры " alt="" coords="208,56,376,83"/>
+<area shape="rect" id="node4" href="$classswitch__document__command.html" title="команда переключеения активного файла " alt="" coords="198,107,386,133"/>
+</map>

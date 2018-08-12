@@ -1,0 +1,4 @@
+<map id="line" name="line">
+<area shape="rect" id="node2" href="$classfigure.html" title="базовый класс, описывающий абстрактнцю фигуру " alt="" coords="56,160,160,296"/>
+<area shape="rect" id="node5" href="$classpoint.html" title="структура, описывающая точку на плоскости и хранящая ее коордиаты " alt="" coords="185,189,255,267"/>
+</map>

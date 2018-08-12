@@ -1,0 +1,5 @@
+<map id="file_command" name="file_command">
+<area shape="rect" id="node2" href="$classnew__file__command.html" title="команда создания нового пустого документа " alt="" coords="5,162,168,254"/>
+<area shape="rect" id="node3" href="$classopen__file__command.html" title="команда на открытия файла " alt="" coords="193,155,359,261"/>
+<area shape="rect" id="node4" href="$classsave__file__command.html" title="команда сохранения в файл " alt="" coords="383,147,549,269"/>
+</map>

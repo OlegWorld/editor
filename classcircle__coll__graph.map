@@ -1,0 +1,4 @@
+<map id="circle" name="circle">
+<area shape="rect" id="node2" href="$classfigure.html" title="базовый класс, описывающий абстрактнцю фигуру " alt="" coords="95,160,199,296"/>
+<area shape="rect" id="node5" href="$classpoint.html" title="структура, описывающая точку на плоскости и хранящая ее коордиаты " alt="" coords="224,189,294,267"/>
+</map>

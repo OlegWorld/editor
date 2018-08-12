@@ -1,0 +1,5 @@
+<map id="figure" name="figure">
+<area shape="rect" id="node2" href="$classcircle.html" title="класс, описывающий объект окружности " alt="" coords="5,206,109,357"/>
+<area shape="rect" id="node3" href="$classline.html" title="класс, описывающий объект линии " alt="" coords="133,206,237,357"/>
+<area shape="rect" id="node4" href="$classrect.html" title="класс, описывающий объект прямоугольника " alt="" coords="262,206,372,357"/>
+</map>

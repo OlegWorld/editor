@@ -1,0 +1,5 @@
+<map id="editor_control" name="editor_control">
+<area shape="rect" id="node2" href="$classfile__control.html" title="класс, осуществляющий управление файлами " alt="" coords="37,221,149,357"/>
+<area shape="rect" id="node4" href="$classdocument__control.html" title="класс, осуществляющий редактирование документа " alt="" coords="179,221,332,357"/>
+<area shape="rect" id="node5" href="$classdocument.html" title="класс рабочего документа, в который можно добавлять/удалять фигуры " alt="" coords="201,6,316,157"/>
+</map>
